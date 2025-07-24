@@ -1,4 +1,11 @@
-This is a proof of concept React Native application that demonstrates how to use PowerSync along side the `@op-engineering/op-sqlite` for asynchronous and synchronous operations, respectively.
+# PowerSync React Native Sync Operations Example
+
+This is a barebones (not Expo specific) proof of concept React Native application that demonstrates how to use PowerSync alongside the `@op-engineering/op-sqlite` for asynchronous and synchronous operations, respectively.
+
+## Install Dependencies
+```shell
+npm install
+```
 
 ## Step 1: Start Metro
 

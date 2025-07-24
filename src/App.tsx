@@ -14,7 +14,7 @@ import {
   PowerSyncContext,
   usePowerSync,
 } from '@powersync/react-native';
-import { system, SystemContext, useOpSqlite } from './SystemContext';
+import { system, SystemContext, useOpSqlite } from './SystemContext.tsx';
 import { PlusIcon, XIcon } from 'lucide-react-native';
 
 type Customer = {
@@ -39,7 +39,7 @@ function App(): React.JSX.Element {
     <SystemContext.Provider value={system}>
       <PowerSyncContext.Provider value={system.powersync}>
         <SafeAreaView>
-          <Image source={require('./logo.png')} style={styles.logo} />
+          <Image source={require('../logo.png')} style={styles.logo} />
           <View style={styles.mainContainer}>
             <View>
               <Text style={styles.sectionTitle}>Async List</Text>
@@ -57,6 +57,9 @@ function App(): React.JSX.Element {
 }
 
 function AsyncCustomerList() {
+  /**
+   * You can still use the PowerSync watch queries even if you're using OPSqlite to write data.
+   */
   const {
     data: customers,
     isLoading,

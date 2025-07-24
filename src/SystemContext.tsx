@@ -13,6 +13,11 @@ import React from 'react';
 import { Platform } from 'react-native';
 
 const localhost = Platform.OS === "android" ? "10.0.2.2" : "localhost";
+
+/**
+ * If you want to use a PowerSync Cloud instance, change the
+ * PS_POWERSYNC_URL to point to a Cloud instance URL.
+ */
 const Config = {
     PS_BACKEND_URL: `http://${localhost}:6060`,
     PS_POWERSYNC_URL: `http://${localhost}:8080`,
@@ -112,7 +117,9 @@ export class System {
   async init() {
     await this.powersync.init();
     await this.powersync.connect(this.connector, {
-      // clientImplementation: SyncClientImplementation.RUST
+      /**
+       * Optional: clientImplementation: SyncClientImplementation.RUST
+       */
     });
 
     await this.powersync.waitForFirstSync();
