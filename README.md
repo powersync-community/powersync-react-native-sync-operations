@@ -48,6 +48,6 @@ For more information, please visit [CocoaPods Getting Started guide](https://gui
 # Using npm
 npm run ios
 
-# OR using Yarn
-yarn ios
+# OR using pnpm
+pnpm ios
 ```
